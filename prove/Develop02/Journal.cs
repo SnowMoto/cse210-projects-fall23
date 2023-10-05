@@ -1,17 +1,28 @@
-using System;
-using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 
-public class Display{
-    public List<Entry> _entries = new List<Entry>();
-    
-    //Methods
-    public void entryDisplay(){
-        
-        foreach (Entry elementEntry in _entries)
+public class Journal
+{
+    public List<Entry> _entries = new List<Entry>
+    {
+
+    };
+    public void AddEntry(Entry newEntry)
+    {
+        _entries.Add(newEntry);
+    }
+    public void DisplayAll()
+    {
+        foreach (Entry entry in _entries)
         {
-         elementEntry.Display();
-         
+            entry.Display();
         }
     }
+    public void SaveFile(string Entry)
+    {
+        
+    }
+    public void LoadFile(string Entry)
+    {
 
     }
+}
