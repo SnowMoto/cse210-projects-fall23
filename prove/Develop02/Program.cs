@@ -30,6 +30,7 @@ class Program
                 Prompts prompt = new Prompts();
                 string newPrompt = prompt.ToGetRandomGenerator();
                 Console.WriteLine($"{newPrompt}");
+                entry._promptText = newPrompt;
 
                 // Get entry text from user.
                 System.Console.WriteLine("");
@@ -41,6 +42,7 @@ class Program
                 DateTime theCurrentTime = DateTime.Now;
                 string dateText = theCurrentTime.ToShortDateString();
                 Console.WriteLine($"{dateText}");
+                entry._date = dateText;
 
                 newJournal.AddEntry(entry);                        
 
