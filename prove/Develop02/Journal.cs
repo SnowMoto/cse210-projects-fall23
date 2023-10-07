@@ -42,6 +42,10 @@ public class Journal
             {
                  outputFile.WriteLine($"{entry._promptText} : {entry._entryText} : {entry._date}");
             }
+            foreach (Notes notes in _note)
+            {
+                outputFile.WriteLine($"{notes._title} : {notes._noteText} : {notes._date}");
+            }
         }
     }
     public void LoadFile(string file)
