@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics.Contracts;
 using System.IO;
 
@@ -51,7 +52,7 @@ public class Journal
     public void LoadFile(string file)
     {
         string[] saveFile = System.IO.File.ReadAllLines(file);
-        Console.WriteLine($"{saveFile}");
+        //Console.WriteLine($"{saveFile}");
 
         foreach (string line in saveFile)
         {
