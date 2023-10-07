@@ -57,6 +57,7 @@ public class Journal
         foreach (string line in saveFile)
         {
              Console.WriteLine(line);
+             Console.WriteLine();
         }
     }
 }

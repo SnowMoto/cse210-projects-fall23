@@ -8,4 +8,5 @@ public class Entry
     {
         System.Console.WriteLine($"{_promptText} {_entryText} {_date}");
     }
+    
 }
