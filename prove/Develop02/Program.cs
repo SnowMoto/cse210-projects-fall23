@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Xml.Linq;
 class Program
 {
     static void Main(string[] args)
@@ -33,7 +34,7 @@ class Program
                 entry._promptText = newPrompt;
 
                 // Get entry text from user.
-                System.Console.WriteLine("");
+                System.Console.WriteLine("> ");
                 string entryText = Console.ReadLine();
 
                 entry._entryText = entryText;
@@ -52,8 +53,24 @@ class Program
             {
                 newJournal.DisplayAll();
             }
+            else if(number == 3)
+            {
+                Console.WriteLine("Name your file: ");
+                string fileName = Console.ReadLine();
+                newJournal.SaveFile(fileName);
+            }
 
+            else if(number == 4)
+            {
+                Console.WriteLine("Enter file name: ");
+                string saveFile = Console.ReadLine();
+                newJournal.LoadFile(saveFile);
+            }
+
+            else if(number == 5)
+            {
+                Console.Write("Have a good day!");
+            }
         }
-
 }
 }
