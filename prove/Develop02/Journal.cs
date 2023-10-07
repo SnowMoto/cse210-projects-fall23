@@ -11,11 +11,26 @@ public class Journal
     {
         _entries.Add(newEntry);
     }
+
+    public List<Notes> _note = new List<Notes>
+    {
+
+    };
+    public void AddNotes(Notes newNotes)
+    {
+        _note.Add(newNotes);
+    }
+
     public void DisplayAll()
     {
         foreach (Entry entry in _entries)
         {
             entry.Display();
+        }
+
+        foreach (Notes notes in _note)
+        {
+            notes.Display();
         }
     }
     public void SaveFile(string file)
