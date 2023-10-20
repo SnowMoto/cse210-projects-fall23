@@ -18,10 +18,15 @@ public class Word{
             foreach (char letter in _word){
                 Console.Write('_');
             }
+            Console.Write(' ');
         }
     }   
     public void HideWord(){
         _isHidden = true;
+    }
+
+    public bool IsHidden(){
+        return _isHidden;
     }
 }
 
