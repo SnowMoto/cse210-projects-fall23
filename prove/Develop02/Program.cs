@@ -10,7 +10,7 @@ class Program
 
         Journal newJournal = new Journal();
 
-        while (number !=5)
+        while (number !=6)
         {
             Console.WriteLine("Welcome to your Journal or Todo Menu: ");
             Console.WriteLine();
