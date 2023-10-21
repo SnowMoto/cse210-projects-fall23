@@ -8,14 +8,6 @@ private string _verseStart;
 private string _verseEnd;
 
 //create default values.
-public Reference(){
-    _book = "Uknown";
-    _chapter = "1";
-    _verseStart = "1";
-    _verseEnd = "0";
-}
-
-//create user input with only first parameters.
 public Reference(string inputBook){
     _book = inputBook;
     _chapter = "1";
