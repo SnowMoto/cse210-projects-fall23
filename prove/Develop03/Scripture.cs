@@ -34,7 +34,7 @@ public class Scripture{
         // What we do when the loop is over
         return allHidden;
     }
-
+    //Shortcut version of line28.
     /*public bool AllHidden(){
         foreach (Word word in _words){
             if (!word.IsHidden())
@@ -44,13 +44,15 @@ public class Scripture{
     }*/
 
     public bool HideWords() {
+        
         Random randomGenerator = new Random();
         int index = randomGenerator.Next(_words.Count);
+
         while (_words[index].IsHidden()) {
             index = randomGenerator.Next(_words.Count);
         }
         _words[index].HideWord();
         return AllHidden();
-    }
+    }   
 
 }

@@ -28,5 +28,6 @@ public class Word{
     public bool IsHidden(){
         return _isHidden;
     }
+
 }
 

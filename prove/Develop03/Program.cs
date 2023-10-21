@@ -5,17 +5,18 @@ class Program
 {
     static void Main(string[] args)
     {
-        int chapterNumber = 0;
         int startNumber = 0;
         int endNumber = 0;
         string quit = "";
-    
-        /* Console.Write("Enter the book: ");
+
+        /*Console.WriteLine("Welcome to Scripture Memory");
+
+        Console.Write("Enter the book: ");
         string userBook = Console.ReadLine();
 
         Console.Write("Enter the chapter of the book: ");
         string userChapter = Console.ReadLine();
-        chapterNumber = int.Parse(userChapter);
+        int chapterNumber = int.Parse(userChapter);
 
         Console.Write("Enter the first verse of the chapter: ");
         string userVerseS = Console.ReadLine();
@@ -26,8 +27,8 @@ class Program
         endNumber = int.Parse(userVerseE);
 
         Console.Write("Enter your scripture: ");
-        string userScripture = Console.ReadLine();
-        */
+        string userScripture = Console.ReadLine();*/
+        
 
         string userBook = "John";
         string userChapter = "3";
