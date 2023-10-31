@@ -97,5 +97,5 @@ class Program
                 Console.Write("Have a good day!");
             }
         }
-}
+    }
 }
