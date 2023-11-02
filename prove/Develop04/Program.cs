@@ -6,9 +6,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        int menu = 0;
 
-        while (menu != 4)
+        while (true)
         {
 
             Console.WriteLine("Welcome to Mindfulness Activities.");
@@ -24,13 +23,12 @@ class Program
             Console.WriteLine();
             Console.WriteLine("Menu option");
 
-            string userinput = Console.ReadLine();
-            menu = int.Parse(userinput);   
+            int menu = int.Parse(Console.ReadLine());   
 
             if (menu ==1)
             {
-                Console.WriteLine("Comeback soon");
-            }   
+                BreathingActivity breathingActivity = new BreathingActivity(10,"This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.", "Breathing", 4, 4, "Great job! You have completed the breathing activity.", 5, 5);
+                breathingActivity.StartBreathingActivity();            }   
 
             else if (menu == 2)
             {
@@ -44,8 +42,8 @@ class Program
 
             else if (menu == 3)
             {
-                Listing list = new Listing();
-                list.DisplayList();               
+                //Listing listingActivity = new Listing(10, "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.", "Listing", 3,3, "Great job! You have completed the listing activity.");
+                //Listing.StartListingActivity();   
 
             }
 
