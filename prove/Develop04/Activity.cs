@@ -5,8 +5,8 @@ public class Activity {
 public int _duration;
 public string _description;
 public string _activityName;
-private int _pauseStart;
-private int _pauseEnd;
+public int _pauseStart;
+public int _pauseEnd;
 private string _endingMessage;
 
     public Activity(int duration, string description, string activityName, int pauseStart, int pauseEnd, string endingMessage)

@@ -1,10 +1,10 @@
 using System;
 
-public class BreathingActivity : Activity{
+public class Breathing : Activity{
     private int _breathIn;
     private int _breatheOut;
 
-    public BreathingActivity(int _duration, string _description, string _activityName, int _pauseStart, int _pauseEnd, string _endingMessage, int breathIn, int breathOut) : base(_duration, _description, _activityName, _pauseStart, _pauseEnd, _endingMessage)
+    public Breathing(int _duration, string _description, string _activityName, int _pauseStart, int _pauseEnd, string _endingMessage, int breathIn, int breathOut) : base(_duration, _description, _activityName, _pauseStart, _pauseEnd, _endingMessage)
     {
         _breatheOut = breathOut;
         _breathIn = breathIn;
@@ -18,11 +18,10 @@ public class BreathingActivity : Activity{
         Console.WriteLine("Get ready to start!");
         StartPause();
         for (int i = 0; i < breathCount; i++){
-            Console.WriteLine("Breath in...");
+            Console.WriteLine("Breath in ...");
             Countdown(_breathIn);
-            Console.WriteLine("Breath out...");
+            Console.WriteLine("Breath out ...");
             Countdown(_breatheOut);
-
         }
         DisplayEndingMessage(_activityName);
 
@@ -31,7 +30,7 @@ public class BreathingActivity : Activity{
     {
         for (int i = seconds; i >= 1; i--)
         {
-            Console.Write(i + "...");
+            Console.Write(i + "  ♥  ");
             System.Threading.Thread.Sleep(1000);
         }
         Console.WriteLine();
