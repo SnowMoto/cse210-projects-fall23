@@ -1,6 +1,7 @@
 using System;
 
-public class Breathing : Activity{
+public class Breathing : Activity
+{
     private int _breathIn;
     private int _breatheOut;
 
@@ -24,7 +25,6 @@ public class Breathing : Activity{
             Countdown(_breatheOut);
         }
         DisplayEndingMessage(_activityName);
-
     }
     public void Countdown(int seconds)
     {

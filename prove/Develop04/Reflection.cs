@@ -4,7 +4,8 @@ public class Reflection : Activity
 {
     public List<string> _prompts = new List<string>();
 
-    public List<string> _question = new List<string>{
+    public List<string> _question = new List<string>
+    {
         "Why was this experience meaningful to you?",
         "What made this time different than other times when you were not as successful?",
         "What is your favorite thing about this experience?",
@@ -12,7 +13,6 @@ public class Reflection : Activity
         "What did you learn about yourself through this experience?",
         "How can you keep this experience in mind in the future?"
     };
-
     public Reflection(int duration, string description, string activityName, int pauseStart, int pauseEnd, string endingMessage) : base(duration, description, activityName, pauseStart, pauseEnd, endingMessage)
     {
         _prompts.Add("Think of a time when you stood up for someone else.");
@@ -51,6 +51,5 @@ public class Reflection : Activity
             Console.WriteLine("Well Done!");
             StartPause();
             DisplayEndingMessage(_activityName);
-
     }
 }

@@ -1,13 +1,13 @@
 using System.IO;
 
-public class Activity {
-
-public int _duration;
-public string _description;
-public string _activityName;
-public int _pauseStart;
-public int _pauseEnd;
-private string _endingMessage;
+public class Activity 
+{
+    public int _duration;
+    public string _description;
+    public string _activityName;
+    public int _pauseStart;
+    private int _pauseEnd;
+    private string _endingMessage;
 
     public Activity(int duration, string description, string activityName, int pauseStart, int pauseEnd, string endingMessage)
     {
@@ -30,7 +30,6 @@ private string _endingMessage;
         Console.WriteLine("How long in seconds would you like your session?");
         _duration = Convert.ToInt32(Console.ReadLine());
     }
-
     public void DisplayHoldAnimation(int pauseSeconds)
     {
         string[] spinner = {"-","|", "/" };
@@ -40,18 +39,14 @@ private string _endingMessage;
             Console.SetCursorPosition(Console.CursorLeft -1, Console.CursorTop);
         }
     }
-
     public void StartPause(int duration = 10)
     {
         DisplayHoldAnimation(duration);
-
     }
-
     public void DisplayEndingMessage(string _activityName)
     {
         Console.WriteLine(_endingMessage);
         DisplayHoldAnimation(10);
-
     }
 
     public void StartActivity(string _activityName, string _description)
@@ -59,7 +54,5 @@ private string _endingMessage;
         Console.Clear();
         StartPause();
         DisplayStartingMessage(_activityName, _description);
-
     }
-
 }
