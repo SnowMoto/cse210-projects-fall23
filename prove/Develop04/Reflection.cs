@@ -13,7 +13,7 @@ public class Reflection : Activity
         "How can you keep this experience in mind in the future?"
     };
 
-    public Reflection(int _duration, string _description, string _activityName, int _pauseStart, int _pauseEnd, string _endingMessage) : base(_duration, _description, _activityName, _pauseStart, _pauseEnd, _endingMessage)
+    public Reflection(int duration, string description, string activityName, int pauseStart, int pauseEnd, string endingMessage) : base(duration, description, activityName, pauseStart, pauseEnd, endingMessage)
     {
         _prompts.Add("Think of a time when you stood up for someone else.");
         _prompts.Add("Think of a time when you did something really difficult.");

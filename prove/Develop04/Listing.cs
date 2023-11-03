@@ -6,7 +6,7 @@ public class Listing : Activity
     private List<string> _random_question = new List<string>();
     public List<string> _userList = new List<string>();
 
- public Listing(int _duration, string _description, string _activityName, int _pauseStart, int _pauseEnd, string _endingMessage) : base(_duration, _description, _activityName, _pauseStart, _pauseEnd, _endingMessage)    
+ public Listing(int duration, string description, string activityName, int pauseStart, int pauseEnd, string endingMessage) : base(duration, description, activityName, pauseStart, pauseEnd, endingMessage)    
     {
         _random_question.Add("Who are people that you appreciate?");
         _random_question.Add("What are personal strengths of yours?");

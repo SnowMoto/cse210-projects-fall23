@@ -4,7 +4,7 @@ public class Breathing : Activity{
     private int _breathIn;
     private int _breatheOut;
 
-    public Breathing(int _duration, string _description, string _activityName, int _pauseStart, int _pauseEnd, string _endingMessage, int breathIn, int breathOut) : base(_duration, _description, _activityName, _pauseStart, _pauseEnd, _endingMessage)
+    public Breathing(int duration, string description, string activityName, int pauseStart, int pauseEnd, string endingMessage, int breathIn, int breathOut) : base(duration, description, activityName, pauseStart, pauseEnd, endingMessage)
     {
         _breatheOut = breathOut;
         _breathIn = breathIn;
