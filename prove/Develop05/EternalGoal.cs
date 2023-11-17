@@ -1,38 +1,33 @@
+using System;
+
 public class EternalGoal : Goal
 {
-    private string _name = "Eternal Goal";
-    private bool _check;
-    public EternalGoal(string name, string description, int points, bool isCompelte, bool check ) : base(name, description, points, isCompelte)
+    private string _type = "Eternal Goal:";
+    private bool _status;
+    public EternalGoal(string goalType, string name, string description, int points) : base(goalType, name, description, points)
     {
-        _check = check;
+        _status = false;
     }
-
-    public bool GetCheck()
+    public EternalGoal(string goalType, string name, string description, int points, bool status) : base(goalType, name, description, points)
     {
-        return _check;
+        _status = status;
     }
-    public override void GoalDone(int i)
+    public override void ListGoal(int i)
     {
-        if (GetIsComplete() == false)
-        {
-            Console.WriteLine($"{i}. [ ] {GetName()} ({GetDescription()})");
-        }
-        else if (GetIsComplete() == true)
-        {
-            Console.WriteLine($"{i}. [X] {GetName()} ({GetDescription()})");
-        }
+        Console.WriteLine($"{i}. [ ] {GetName()} ({GetDescription()})");
     }
     public override string SaveGoal()
     {
-        return ($"{_name}; {GetName()}; {GetDescription()}; {GetPoints()}; {_check}");
+        return ($"{_type}; {GetName()}; {GetDescription()}; {GetPoints()}; {_status}");
     }
     public override string LoadGoal()
     {
-        return ($"{_name}; {GetName()}; {GetDescription()}; {GetPoints()}; {_check}");
+        return ($"{_type}; {GetName()}; {GetDescription()}; {GetPoints()}; {_status}");
     }
-    public override void RecordEvent(List<Goal> goals)
+      public override void RecordGoalEvent(List<Goal> goals)
     {
-       _check = true;
        Console.WriteLine($"Congratulations! You have earned {GetPoints()} points!");
     }
+
+
 }

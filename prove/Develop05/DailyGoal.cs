@@ -1,14 +1,14 @@
 using System;
 
-public class SimpleGoal : Goal
+public class DailyGoal : Goal
 {
-    private string _type = "Simple Goal:";
+    private string _type = "Daily Goal:";
     private bool _status;
-    public SimpleGoal(string goalType, string name, string description, int points) : base(goalType, name, description, points)
+    public DailyGoal(string goalType, string name, string description, int points) : base(goalType, name, description, points)
     {
         _status = false;
     }
-    public SimpleGoal(string goalType, string name, string description, int points, bool status) : base(goalType, name, description, points)
+    public DailyGoal(string goalType, string name, string description, int points, bool status) : base(goalType, name, description, points)
     {
         _status = status;
     }
@@ -40,5 +40,4 @@ public class SimpleGoal : Goal
        _status = true;
        Console.WriteLine($"Congratulations! You have earned {GetPoints()} points!");
     }
-
 }

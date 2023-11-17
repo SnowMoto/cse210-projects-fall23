@@ -1,23 +1,22 @@
 using System;
-using System.ComponentModel;
 
-public abstract class Goal 
+public abstract class Goal
 {
+    private string _type;
     private string _name;
     private string _description;
     private int _points;
-    private int _countTimes;
-    private int _count;
-    private bool _isComplete;
-
-    public Goal (string name, string description, int points, bool isCompelte )
+    public Goal(string goalType, string name, string description, int points)
     {
+        _type = goalType;
         _name = name;
         _description = description;
         _points = points;
-        _isComplete = isCompelte;
     }
-
+    public string GetGoalType()
+    {
+        return _type;
+    }
     public string GetName()
     {
         return _name;
@@ -30,14 +29,8 @@ public abstract class Goal
     {
         return _points;
     }
-
-    public bool GetIsComplete()
-    {
-        return _isComplete;
-    }
-
-    public abstract void GoalDone(int i);
+    public abstract void ListGoal(int i);
     public abstract string SaveGoal();
     public abstract string LoadGoal();
-    public abstract void RecordEvent(List<Goal> goals);
+    public abstract void RecordGoalEvent(List<Goal> goals);
 }
