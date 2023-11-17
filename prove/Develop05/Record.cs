@@ -105,7 +105,7 @@ public class Record
                 int points = int.Parse(entries[3]);
                 bool status = Convert.ToBoolean(entries[4]);
 
-                if (entries[0] == "Simple Goal:")
+                if (entries[0] == "Daily Goal:")
                 {
                     DailyGoal dGoal = new DailyGoal(goalType, name, description, points, status);
                     AddGoal(dGoal);

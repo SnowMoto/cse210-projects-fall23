@@ -87,7 +87,7 @@ class Program
             else if (menu == 5)
             {
                 Console.Clear();  
-                Console.Write($"\n*** You currently have {goals.GetTotalPoints()} points! ***\n");
+                Console.Write($"\n*** You currently have {goals.GetTotalPoints()} points ♥ ***\n");
                 goals.RecordGoalEvent();               
             }
 
@@ -99,13 +99,13 @@ class Program
             else if (menu == 7)
             {
                 Console.Clear();  
-                Console.Write($"\n*** You currently have {goals.GetTotalPoints()} points! ***\n");
+                Console.Write($"\n*** You currently have {goals.GetTotalPoints()} points ♥ ***\n");
                 goals.LoadGoals(); 
             }
           
             else if (menu == 8)
             {
-                Console.Write("See you next time!");
+                Console.Write("See you next time ♥");
             }
         }
     }   
