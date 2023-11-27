@@ -39,7 +39,8 @@ class Program
                 string description = Console.ReadLine();
                 Console.Write("What is the amount of points associated with this goal?  ");
                 int points = int.Parse(Console.ReadLine());
-                DailyGoal dGoal = new DailyGoal("Simple Goal:", name, description, points);
+                bool status = false;
+                DailyGoal dGoal = new DailyGoal("Simple Goal:", name, description, points, status);
                 goals.AddGoal(dGoal);
             }    
             else if (menu == 2)
@@ -51,7 +52,8 @@ class Program
                 string description = Console.ReadLine();
                 Console.Write("What is the amount of points associated with this goal?  ");
                 int points = int.Parse(Console.ReadLine());
-                SimpleGoal sGoal = new SimpleGoal("Simple Goal:", name, description, points);
+                bool status = false;
+                SimpleGoal sGoal = new SimpleGoal("Simple Goal:", name, description, points, status);
                 goals.AddGoal(sGoal);
             }    
 
@@ -64,7 +66,8 @@ class Program
                 string description = Console.ReadLine();
                 Console.Write("What is the amount of points associated with this goal?  ");
                 int points = int.Parse(Console.ReadLine());
-                EternalGoal eGoal = new EternalGoal("Eternal Goal:", name, description, points);
+                bool status = false;
+                EternalGoal eGoal = new EternalGoal("Eternal Goal:", name, description, points, status);
                 goals.AddGoal(eGoal);
             }
 
@@ -80,7 +83,8 @@ class Program
                 int numberTimes = int.Parse(Console.ReadLine());
                 Console.Write("What is the bonus for accomplishing it that many times?  ");
                 int bonusPoints = int.Parse(Console.ReadLine());
-                ChecklistGoal clGoal = new ChecklistGoal("Check List Goal:", name, description, points, numberTimes, bonusPoints);
+                bool status = false;
+                ChecklistGoal clGoal = new ChecklistGoal("Check List Goal:", name, description, points, numberTimes, bonusPoints, status);
                 goals.AddGoal(clGoal);
             }
 
@@ -98,8 +102,6 @@ class Program
 
             else if (menu == 7)
             {
-                Console.Clear();  
-                Console.Write($"\n*** You currently have {goals.GetTotalPoints()} points ♥ ***\n");
                 goals.LoadGoals(); 
             }
           

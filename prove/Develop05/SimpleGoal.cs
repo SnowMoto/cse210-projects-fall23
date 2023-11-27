@@ -3,42 +3,35 @@ using System;
 public class SimpleGoal : Goal
 {
     private string _type = "Simple Goal:";
-    private bool _status;
-    public SimpleGoal(string goalType, string name, string description, int points) : base(goalType, name, description, points)
+    public SimpleGoal(string goalType, string name, string description, int points, bool status) : base(goalType, name, description, points, status)
     {
-        _status = false;
-    }
-    public SimpleGoal(string goalType, string name, string description, int points, bool status) : base(goalType, name, description, points)
-    {
-        _status = status;
-    }
-    public Boolean Finished()
-    {
-        return _status;
+
     }
     public override void ListGoal(int i)
     {
-        if (Finished() == false)
+        if (GetStatus() == false)
         {
             Console.WriteLine($"{i}. [ ] {GetName()} ({GetDescription()})");
         }
-        else if (Finished() == true)
+        else if (GetStatus() == true)
         {
             Console.WriteLine($"{i}. [X] {GetName()} ({GetDescription()})");
         }
     }
     public override string SaveGoal()
     {
-        return ($"{_type}; {GetName()}; {GetDescription()}; {GetPoints()}; {_status}");
+        return ($"{_type}; {GetName()}; {GetDescription()}; {GetPoints()}; {GetStatus}");
     }
     public override string LoadGoal()
     {
-        return ($"{_type}; {GetName()}; {GetDescription()}; {GetPoints()}; {_status}");
+        return ($"{_type}; {GetName()}; {GetDescription()}; {GetPoints()}; {GetStatus}");
     }
     public override void RecordGoalEvent(List<Goal> goals)
     {
-       _status = true;
+       if (GetStatus() == true)
+       {
        Console.WriteLine($"Congratulations! You have earned {GetPoints()} points ♥");
+       }
     }
 
 }

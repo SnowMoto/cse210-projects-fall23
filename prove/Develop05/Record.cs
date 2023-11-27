@@ -77,7 +77,18 @@ public class Record
             outputFile.WriteLine(GetTotalPoints());
             foreach (Goal goal in _goals)
             {
-                outputFile.WriteLine($"{goal.SaveGoal}");
+                string goalText = "";
+                goalText += goal.GetGoalType();
+                goalText += ", ";
+                goalText += goal.GetName();
+                goalText += ", ";
+                goalText += goal.GetDescription();
+                goalText += ", ";
+                goalText += goal.GetPoints();
+                goalText += ", ";
+                goalText += goal.GetStatus();
+                goalText += ", ";
+                outputFile.WriteLine($"{goalText}");
             }
         }
     }
@@ -93,17 +104,21 @@ public class Record
             string[] readText = File.ReadAllLines(userFileName);
 
             int totalPoints = int.Parse(readText[0]);
-            SetTotalPoints(totalPoints);
+            AddPoints(totalPoints);
             readText = readText.Skip(1).ToArray();
             foreach (string line in readText)
             {
-                string[] entries = line.Split("; ");
+                string[] entries = line.Split(", ");
 
                 string goalType = entries[0];
                 string name = entries[1];
                 string description = entries[2];
                 int points = int.Parse(entries[3]);
                 bool status = Convert.ToBoolean(entries[4]);
+                if (status == true)
+                {
+                    totalPoints += points;
+                }
 
                 if (entries[0] == "Daily Goal:")
                 {
@@ -129,6 +144,7 @@ public class Record
                     AddGoal(clGoal);
                 }
             }
+               Console.Write($"\n*** You currently have {totalPoints} points ♥ ***\n");
         }
     }
 }

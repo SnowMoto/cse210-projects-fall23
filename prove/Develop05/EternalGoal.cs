@@ -3,14 +3,9 @@ using System;
 public class EternalGoal : Goal
 {
     private string _type = "Eternal Goal:";
-    private bool _status;
-    public EternalGoal(string goalType, string name, string description, int points) : base(goalType, name, description, points)
+    public EternalGoal(string goalType, string name, string description, int points, bool status) : base(goalType, name, description, points, status)
     {
-        _status = false;
-    }
-    public EternalGoal(string goalType, string name, string description, int points, bool status) : base(goalType, name, description, points)
-    {
-        _status = status;
+
     }
     public override void ListGoal(int i)
     {
@@ -18,11 +13,11 @@ public class EternalGoal : Goal
     }
     public override string SaveGoal()
     {
-        return ($"{_type}; {GetName()}; {GetDescription()}; {GetPoints()}; {_status}");
+        return ($"{_type}; {GetName()}; {GetDescription()}; {GetPoints()}; {GetStatus()}");
     }
     public override string LoadGoal()
     {
-        return ($"{_type}; {GetName()}; {GetDescription()}; {GetPoints()}; {_status}");
+        return ($"{_type}; {GetName()}; {GetDescription()}; {GetPoints()}; {GetStatus()}");
     }
       public override void RecordGoalEvent(List<Goal> goals)
     {
