@@ -78,4 +78,47 @@ public class ProgressManagement
             chore.DisplayProgress(_chores);
         }
     }
+    public void ListOfChores()
+    {
+        if (_chores.Count() > 0)
+        {
+            Console.WriteLine("\nYour Chores are:");
+
+            int index = 1;
+            foreach (Chores chore in _chores)
+            {
+                chore.ParentChoreList(index);
+                index = index + 1;
+            }
+        }
+        else
+        {
+            Console.WriteLine("\nYou currently have no chores!");
+        }
+    }
+    public void RecordChore()
+    {
+        ListOfChores();
+
+        Console.Write("\nWhich chore did you accomplished?  ");
+        int select = int.Parse(Console.ReadLine())-1;
+
+
+    }
+    public void SaveChore()
+    {
+        Console.Write("\nWhat is the name for this goal file?  ");
+        string userInput = Console.ReadLine();
+        string userFileName = userInput + "";
+
+        using (StreamWriter outputFile = new StreamWriter(userFileName))
+        {
+            foreach (Chores chore in _chores)
+            {   
+                Console.WriteLine($"[ ] {chore}");
+
+            }
+            outputFile.WriteLine($"All chores complete = 'reward placeholder'");
+        }
+    }
 }

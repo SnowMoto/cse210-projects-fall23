@@ -14,7 +14,7 @@ class Program
         {
             Console.WriteLine("Welcome to Kids Chore App");
             Console.WriteLine();
-            Console.WriteLine("Here you can track their chores and the rewards they have earned.");
+            Console.WriteLine("Keep track of chores and the rewards they earn.");
             Console.WriteLine();
             Console.WriteLine("Menu:");
             Console.WriteLine("1. Toddler: Age 2-4");
@@ -23,7 +23,7 @@ class Program
             Console.WriteLine("4. Teen: Age 12+");
             Console.WriteLine("5. Good Habits Checklist");
             Console.WriteLine("6. Save Chores");
-            Console.WriteLine("7. Load Chores");
+            Console.WriteLine("7. Record Chores");
             Console.WriteLine("8.Exit");
             Console.WriteLine();
             Console.WriteLine("Menu option");
@@ -43,13 +43,12 @@ class Program
 
             else if (menu == 6)
             {
-                
-                
+                pm.SaveChore();   
             }
           
             else if (menu == 7)
             {
-
+                pm.RecordChore();
             }
             
             else if (menu == 8)

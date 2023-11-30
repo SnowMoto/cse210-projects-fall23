@@ -27,10 +27,10 @@ public class BigKid : Chores
     }
     public override string SaveChore()
     {
-        return ($"{_ageGroup}; {GetName()}; {GetChoreName()}; {GetRewards()}; {GetChoreIsComplete()}");
+        return ($"{_ageGroup};[ {GetChoreIsComplete()} ] {GetChoreName()}; {GetRewards()}; ");
     }
-    public override void DisplayProgress(List<Chores> choress)
+    public override void DisplayProgress(List<Chores> chores)
     {
-        Console.WriteLine($"{_ageGroup}; {GetName()}; {GetChoreName()}; {GetRewards()}; {GetChoreIsComplete()}");
+        Console.WriteLine($"{_ageGroup};[ {GetChoreIsComplete()} ]; {GetRewards()};");
     }
 }
