@@ -1,47 +1,37 @@
 using System;
+using System.Runtime.CompilerServices;
 
 public class LittleKid : Chores
 {
-    private string _ageGroup = "Little Kid";
-    private string _treatList;
-    private int _screenTime;
-    private bool _choreIsComplete;
-    private List<string>_choreList;
-    public LittleKid(string ageGroup, string rewardsEarned, string choreName) : base(ageGroup, rewardsEarned, choreName)
+    private string _ageGroup = "Big Kid";
+    private List<string> _treats;//random gen for treats
+    private List<int> _screenTime;//random gen for screen time
+    public LittleKid(string ageGroup, string rewardsEarned, string choreName, bool choreIsComplete) : base(ageGroup, rewardsEarned, choreName, choreIsComplete)
     {
-        _choreIsComplete = false;
+        _ageGroup = ageGroup;
     }
-    public LittleKid(string ageGroup, string rewardsEarned, string choreName, bool choreIsComplete) : base(ageGroup, rewardsEarned, choreName)
+    public LittleKid() :base("Little Kid", "", "", false)
     {
-        _choreIsComplete = choreIsComplete;
-    }
-    public Boolean Finished()
-    {
-        return _choreIsComplete;
+        
     }
     public override void ParentChoreList(int i)
     {
-        if (Finished() == false)
+        if (GetChoreIsComplete() == false)
         {
             Console.WriteLine($"{i}. [ ] {GetName()} ({GetChoreName()})");
         }
-        else if (Finished() == true)
+        else if (GetChoreIsComplete() == true)
         {
             Console.WriteLine($"{i}. [X] {GetName()} ({GetChoreName()})");
         }
     }
     public override string SaveChore()
     {
-        return ($"{_ageGroup}; {GetName()}; {GetChoreName()}; {GetRewards()}; {_choreIsComplete}");
-    }
-    public override string LoadChore()
-    {
-        return ($"{_ageGroup}; {GetName()}; {GetChoreName()}; {GetRewards()}; {_choreIsComplete}");
+        return ($"{_ageGroup}; {GetName()}; {GetChoreName()}; {GetRewards()}; {GetChoreIsComplete()}");
     }
     public override void DisplayProgress(List<Chores> choress)
     {
-       _choreIsComplete = true;
-       Console.WriteLine($"Congratulations! You have earned {GetRewards()} points ♥");
+        Console.WriteLine($"{_ageGroup}; {GetName()}; {GetChoreName()}; {GetRewards()}; {GetChoreIsComplete()}");
     }
 
 }

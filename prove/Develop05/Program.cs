@@ -40,7 +40,7 @@ class Program
                 Console.Write("What is the amount of points associated with this goal?  ");
                 int points = int.Parse(Console.ReadLine());
                 bool status = false;
-                DailyGoal dGoal = new DailyGoal("Simple Goal:", name, description, points, status);
+                DailyGoal dGoal = new DailyGoal("Daily Goal:", name, description, points, status);
                 goals.AddGoal(dGoal);
             }    
             else if (menu == 2)

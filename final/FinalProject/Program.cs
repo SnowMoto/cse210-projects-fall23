@@ -7,6 +7,8 @@ class Program
     static void Main(string[] args)
     {
         int menu = 0;
+        ProgressManagement pm = new ProgressManagement();
+        GoodHabits habit = new GoodHabits();
 
         while ( menu != 5)
         {
@@ -19,58 +21,38 @@ class Program
             Console.WriteLine("2. Little Kid: Age 5-7");
             Console.WriteLine("3. Big Kid: Age 8-11");
             Console.WriteLine("4. Teen: Age 12+");
-            Console.WriteLine("5. Bonus Good Habits Checklist");
+            Console.WriteLine("5. Good Habits Checklist");
             Console.WriteLine("6. Save Chores");
             Console.WriteLine("7. Load Chores");
-            Console.WriteLine("8. Rewards Earned");
+            Console.WriteLine("8.Exit");
             Console.WriteLine();
-            Console.WriteLine("Exit");
             Console.WriteLine("Menu option");
 
             string user = Console.ReadLine(); 
             menu = int.Parse(user);  
 
-            if (menu == 1)
+            if (menu > 0 && menu < 4)
             {
-                
+                pm.AddChore(menu);
             }    
-            else if (menu == 2)
-            {
-                
-            }    
-
-
-            else if (menu == 3)
-            {
-                
-            }
-
-            else if (menu == 4)
-            {
-                
-            }
 
             else if (menu == 5)
             {
-                        
+                habit.GetAssignedChores();             
             }
 
             else if (menu == 6)
             {
-                              
-            }
-
-            else if (menu == 7)
-            {
+                
                 
             }
           
-            else if (menu == 8)
+            else if (menu == 7)
             {
 
             }
             
-            else if (menu == 9)
+            else if (menu == 8)
             {
                 Console.Write("See you next time ♥");
             }
