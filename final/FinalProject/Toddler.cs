@@ -1,51 +1,37 @@
 using System;
+using System.Runtime.CompilerServices;
 
 public class Toddler : Chores
 {
     private string _ageGroup = "Toddler";
-    private List<string> _treatList;
-    private bool _choreIsComplete;
-    private List<string>_choreList;
-    public Toddler(string ageGroup, string rewardsEarned, string choreName) : base(ageGroup, rewardsEarned, choreName)
+    private List<string> _treats;//random gen for treats
+    public object AddChoreNamwe { get; }
+
+    public Toddler(string ageGroup, string rewardsEarned, string choreName, bool choreIsComplete) : base(ageGroup, rewardsEarned, choreName, choreIsComplete)
     {
-        _choreIsComplete = false;
+        _ageGroup = ageGroup;
     }
-    public Toddler(string ageGroup, string rewardsEarned, string choreName, bool choreIsComplete) : base(ageGroup, rewardsEarned, choreName)
+    public Toddler() :base("Toddler", "", "", false)
     {
-        _choreIsComplete = choreIsComplete;
-    }
-    public Boolean Finished()
-    {
-        return _choreIsComplete;
+
     }
     public override void ParentChoreList(int i)
     {
-        if (Finished() == false)
+        if (GetChoreIsComplete() == false)
         {
             Console.WriteLine($"{i}. [ ] {GetName()} ({GetChoreName()})");
         }
-        else if (Finished() == true)
+        else if (GetChoreIsComplete() == true)
         {
             Console.WriteLine($"{i}. [X] {GetName()} ({GetChoreName()})");
         }
     }
-
-    public void AssignedChores()
-    {
-
-    }
     public override string SaveChore()
     {
-        return ($"{_ageGroup}; {GetName()}; {GetChoreName()}; {GetRewards()}; {_choreIsComplete}");
+        return ($"{_ageGroup}; {GetName()}; {GetChoreName()}; {GetRewards()}; {GetChoreIsComplete()}");
     }
-    public override string LoadChore()
+    public override void DisplayProgress(List<Chores> chores)
     {
-        return ($"{_ageGroup}; {GetName()}; {GetChoreName()}; {GetRewards()}; {_choreIsComplete}");
+        Console.WriteLine($"{_ageGroup}; {GetName()}; {GetChoreName()}; {GetRewards()}; {GetChoreIsComplete()}");
     }
-    public override void DisplayProgress(List<Chores> choress)
-    {
-       _choreIsComplete = true;
-       Console.WriteLine($"Congratulations! You have earned {GetRewards()} ♥");
-    }
-
 }
