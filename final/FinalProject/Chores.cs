@@ -1,3 +1,4 @@
+
 public abstract class Chores
 {
     private string _ageGroup;
@@ -32,4 +33,5 @@ public abstract class Chores
     public abstract void ParentChoreList(int i);
     public abstract void DisplayProgress(List<Chores> chores);
     public abstract string SaveChore();
+
 }
