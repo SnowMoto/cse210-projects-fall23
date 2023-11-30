@@ -1,4 +1,6 @@
 
+using System.Collections.Concurrent;
+
 public abstract class Chores
 {
     private string _ageGroup;
@@ -29,6 +31,10 @@ public abstract class Chores
     public bool GetChoreIsComplete()
     {
         return _choreIsComplete;
+    }
+    public void SetChoreISCompelte()
+    {
+        _choreIsComplete = true;
     }
     public abstract void ParentChoreList(int i);
     public abstract void DisplayProgress(List<Chores> chores);

@@ -8,7 +8,6 @@ public class ProgressManagement
     {
         _chores = new List<Chores>();
     }
-
     public void AddChore(int ageGroup)
     {
         string addChoreName;
@@ -78,7 +77,7 @@ public class ProgressManagement
             chore.DisplayProgress(_chores);
         }
     }
-    public void ListOfChores()
+    public List<Chores> ListOfChores()
     {
         if (_chores.Count() > 0)
         {
@@ -95,30 +94,30 @@ public class ProgressManagement
         {
             Console.WriteLine("\nYou currently have no chores!");
         }
+        return _chores;
     }
     public void RecordChore()
     {
         ListOfChores();
 
-        Console.Write("\nWhich chore did you accomplished?  ");
+        Console.Write("\nWhich chore did you accomplish? Enter chore number:  ");
+    
+        //for (int i = 0; i < _chores.Count; i++)
+        //{
+        //    _chores[i].ParentChoreList(i);
+        //}   
         int select = int.Parse(Console.ReadLine())-1;
-
-
+        _chores [select].SetChoreISCompelte();
     }
     public void SaveChore()
     {
-        Console.Write("\nWhat is the name for this goal file?  ");
+        Console.Write("\nSave by childs name:  ");
         string userInput = Console.ReadLine();
-        string userFileName = userInput + "";
+        string userFileName = userInput + ".txt";
 
         using (StreamWriter outputFile = new StreamWriter(userFileName))
         {
-            foreach (Chores chore in _chores)
-            {   
-                Console.WriteLine($"[ ] {chore}");
-
-            }
-            outputFile.WriteLine($"All chores complete = 'reward placeholder'");
+                outputFile.WriteLine(ListOfChores());
         }
     }
 }
