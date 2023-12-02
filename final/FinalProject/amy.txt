@@ -1,2 +1,5 @@
-[ ] Toddler (mop)
-[ ] Toddler (sweep)
+[X] Little Kid (Help set the table)
+[X] Little Kid (Clear the table)
+[ ] Little Kid (Put away clean utensils and plastic ware)
+[ ] Little Kid (Dust)
+[ ] Little Kid (Clean bathroom)

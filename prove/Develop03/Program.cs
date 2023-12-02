@@ -5,8 +5,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        int startNumber = 0;
-        int endNumber = 0;
+        //int startNumber = 0;
+        //int endNumber = 0;
         string quit = "";
 
         /*Console.WriteLine("Welcome to Scripture Memory");

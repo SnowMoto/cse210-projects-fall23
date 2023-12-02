@@ -14,20 +14,6 @@ public class Toddler : Chores
     {
 
     }
-    public List<string> _treats = new List<string>
-    {
-        "Candy",
-        "Ice Cream",
-        "Cookie",
-        "Snack Choice",
-        "Kids Choice"
-    };
-    public override void RewardsEarned()//implement method for reward.
-    {
-         Random randomGenerator = new Random();
-        int index = randomGenerator.Next(1,_treats.Count());
-        Console.WriteLine($"\n*** You have {_treats[index]} points! ***\n");
-    }
     public override void ParentChoreList(int i)
     {
         if (GetChoreIsComplete() == false)

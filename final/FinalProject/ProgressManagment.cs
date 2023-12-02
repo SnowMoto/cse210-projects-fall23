@@ -5,10 +5,12 @@ public class ProgressManagement
 {
     private List<Chores> _chores;
     private List<ChoreIdeas> _assign;
+    private List<Rewards> _earned;
     public ProgressManagement()
     {
         _chores = new List<Chores>();
         _assign = new List<ChoreIdeas>();
+        _earned = new List<Rewards>();
     }
     public void AddChore(int ageGroup)
     {
@@ -19,13 +21,12 @@ public class ProgressManagement
         Console.Write("");
         string answer = Console.ReadLine();
 
-        if (answer == "n")
+        if (answer == "n")// figure out the while loop to continue to add chores before returning to menu
         {
-            Console.WriteLine("Type 0 when finished.");
-            Console.WriteLine("");
             Console.WriteLine("\nCreate a Chore List: ");
+
             addChoreName = Console.ReadLine();
-            switch (ageGroup)//next to add rewards.
+            switch (ageGroup)
             {
                     case 1:
                     chore = new Toddler("Toddler", addChoreName, false);
@@ -48,70 +49,66 @@ public class ProgressManagement
                     break;
 
             }
-                    _chores.Add(chore);
-        }
+            _chores.Add(chore);
+        }            
+            
         else
         {
-            switch(ageGroup)// goes into the class but wont display. Need to figure out how to display.
+            switch(ageGroup)
             {
-                    case 1:
-                        
-                        assign = new ChoreIdeas();
-                        foreach (string toddlerchore in assign._toddlerChores)
-                        {
-                            Toddler toddler = new Toddler("Toddler", toddlerchore, false);
-                            _chores.Add(toddler);                   
-                        }
-                    break;
+                case 1:
+                assign = new ChoreIdeas();
+                    foreach (string toddlerchore in assign._toddlerChores)
+                    {
+                        Toddler toddler = new Toddler("Toddler", toddlerchore, false);
+                        _chores.Add(toddler);                   
+                    }
+                break;
 
-                    case 2:
-                        assign = new ChoreIdeas();
-                        foreach (string lilkidchore in assign._lilKidChores)
-                        {
-                            LittleKid lilKid = new LittleKid ("Little Kid", lilkidchore, false);
-                            _chores.Add(lilKid);                   
-                        }
-                    break;
+                case 2:
+                assign = new ChoreIdeas();
+                    foreach (string lilkidchore in assign._lilKidChores)
+                    {
+                        LittleKid lilKid = new LittleKid ("Little Kid", lilkidchore, false);
+                        _chores.Add(lilKid);                   
+                    }
+                break;
 
-                    case 3:
-                        assign = new ChoreIdeas();
-                        foreach (string bigkidchore in assign._bigKidChores)
+                case 3:
+                assign = new ChoreIdeas();
+                    foreach (string bigkidchore in assign._bigKidChores)
                         {
                             BigKid bigkid = new BigKid("Big Kid", bigkidchore, false);
                             _chores.Add(bigkid);                   
-                        }                    break;
+                        }                    
+                break;
 
-                    case 4:
-                        assign = new ChoreIdeas();
-                        foreach (string teenchore in assign._teenChores)
-                        {
-                            Teen teen = new Teen("Toddler", teenchore, false);
-                            _chores.Add(teen);                   
-                        }
-                    break;
+                case 4:
+                assign = new ChoreIdeas();
+                    foreach (string teenchore in assign._teenChores)
+                    {
+                        Teen teen = new Teen("Toddler", teenchore, false);
+                        _chores.Add(teen);                   
+                    }
+                break;
 
-                    default:
-                        assign = new ChoreIdeas();
-                        foreach (string toddlerchore in assign._toddlerChores)
-                        {
-                            Toddler toddler = new Toddler("Toddler", toddlerchore, false);
-                            _chores.Add(toddler);                   
-                        } 
-                    break;
+                default:
+                assign = new ChoreIdeas();
+                    foreach (string toddlerchore in assign._toddlerChores)
+                    {
+                        Toddler toddler = new Toddler("Toddler", toddlerchore, false);
+                        _chores.Add(toddler);                   
+                    } 
+                break;
             }   
+            ListOfChores();
         }
+                    Console.WriteLine($"What reward do they earn? ");
+                    string childReward = Console.ReadLine();
+                    Rewards rewards = new Rewards(childReward);
+                    _earned.Add(rewards);
     }
-    public void DisplayProgress()
-    {
-        foreach (Chores chore in _chores)
-        {
-            chore.DisplayProgress(_chores);
-        }
-        foreach (ChoreIdeas assign in _assign)
-        {
-            assign.DisplayProgress(_assign);
-        }
-    }
+
     public List<Chores> ListOfChores()
     {
         if (_chores.Count() > 0)
@@ -163,7 +160,6 @@ public class ProgressManagement
         }*/   
         int select = int.Parse(Console.ReadLine())-1;
         _chores [select].SetChoreISCompelte();
-        _assign [select].SetChoreIsDone();
     }
     public void SaveChore()
     {

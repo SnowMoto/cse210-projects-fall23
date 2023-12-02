@@ -30,7 +30,6 @@ public abstract class Chores
     {
         _choreIsComplete = true;
     }
-    public abstract void RewardsEarned();
     public abstract void ParentChoreList(int i);
     public abstract void DisplayProgress(List<Chores> chores);
     public abstract string SaveChore();

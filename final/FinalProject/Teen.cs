@@ -31,10 +31,6 @@ public class Teen : Chores
     {
         _moneyEarned += money;
     }
-    public override void RewardsEarned()//implement method for reward.
-    {
-        
-    }
     public override void ParentChoreList(int i)
     {
         if (GetChoreIsComplete() == false)
