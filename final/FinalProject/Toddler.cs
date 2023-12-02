@@ -6,13 +6,27 @@ public class Toddler : Chores
     private string _ageGroup = "Toddler";
     public object AddChoreNamwe { get; }
 
-    public Toddler(string ageGroup, string rewardsEarned, string choreName, bool choreIsComplete) : base(ageGroup, rewardsEarned, choreName, choreIsComplete)
+    public Toddler(string ageGroup, string choreName, bool choreIsComplete) : base(ageGroup, choreName, choreIsComplete)
     {
         _ageGroup = ageGroup;
     }
-    public Toddler() :base("Toddler", "", "", false)
+    public Toddler() :base("Toddler", "", false)
     {
 
+    }
+    public List<string> _treats = new List<string>
+    {
+        "Candy",
+        "Ice Cream",
+        "Cookie",
+        "Snack Choice",
+        "Kids Choice"
+    };
+    public override void RewardsEarned()//implement method for reward.
+    {
+         Random randomGenerator = new Random();
+        int index = randomGenerator.Next(1,_treats.Count());
+        Console.WriteLine($"\n*** You have {_treats[index]} points! ***\n");
     }
     public override void ParentChoreList(int i)
     {
@@ -27,10 +41,10 @@ public class Toddler : Chores
     }
     public override string SaveChore()
     {
-        return ($"{_ageGroup};[ {GetChoreIsComplete()} ] {GetChoreName()}; {GetRewards()}; ");
+        return ($"{_ageGroup};[ {GetChoreIsComplete()} ] {GetChoreName()};");
     }
     public override void DisplayProgress(List<Chores> chores)
     {
-        Console.WriteLine($"{_ageGroup};[ {GetChoreIsComplete()} ]; {GetRewards()};");
+        Console.WriteLine($"{_ageGroup};[ {GetChoreIsComplete()} ];");
     }
 }

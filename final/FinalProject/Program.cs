@@ -10,7 +10,7 @@ class Program
         ProgressManagement pm = new ProgressManagement();
         GoodHabits habit = new GoodHabits();
 
-        while ( menu != 5)
+        while ( menu != 9)
         {
             Console.WriteLine("Welcome to Kids Chore App");
             Console.WriteLine();
@@ -23,8 +23,9 @@ class Program
             Console.WriteLine("4. Teen: Age 12+");
             Console.WriteLine("5. Good Habits Checklist");
             Console.WriteLine("6. Save Chores");
-            Console.WriteLine("7. Record Chores");
-            Console.WriteLine("8.Exit");
+            Console.WriteLine("7. Load Chore");
+            Console.WriteLine("8. Record Chores");
+            Console.WriteLine("9. Exit");
             Console.WriteLine();
             Console.WriteLine("Menu option");
 
@@ -48,10 +49,14 @@ class Program
           
             else if (menu == 7)
             {
+                pm.LoadChore();
+            }
+            else if (menu == 8)
+            {
                 pm.RecordChore();
             }
             
-            else if (menu == 8)
+            else if (menu == 9)
             {
                 Console.Write("See you next time ♥");
             }

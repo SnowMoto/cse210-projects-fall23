@@ -4,14 +4,12 @@ using System.Collections.Concurrent;
 public abstract class Chores
 {
     private string _ageGroup;
-    private string _rewardsEarned;
     private string _choreName;
     private bool _choreIsComplete;
 
-    public Chores (string ageGroup, string rewardsEarned, string choreName, bool choreIsComplete)
+    public Chores (string ageGroup, string choreName, bool choreIsComplete)
     {
         _ageGroup = ageGroup;
-        _rewardsEarned = rewardsEarned;
         _choreName = choreName;
         _choreIsComplete = choreIsComplete;
     }
@@ -19,10 +17,6 @@ public abstract class Chores
     public string GetName()
     {
         return _ageGroup;
-    }
-    public string GetRewards()
-    {
-        return _rewardsEarned;
     }
     public string GetChoreName()
     {
@@ -36,6 +30,7 @@ public abstract class Chores
     {
         _choreIsComplete = true;
     }
+    public abstract void RewardsEarned();
     public abstract void ParentChoreList(int i);
     public abstract void DisplayProgress(List<Chores> chores);
     public abstract string SaveChore();

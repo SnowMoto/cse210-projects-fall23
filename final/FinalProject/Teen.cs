@@ -4,13 +4,34 @@ using System.Runtime.CompilerServices;
 public class Teen : Chores
 {
     private string _ageGroup = "Teen";
-    private List<int> _screenTime;//random screen time
-    private List<int> _moneyEarned;//parent enter money amount for each chore.
-    public Teen(string ageGroup, string rewardsEarned, string choreName, bool choreIsComplete) : base(ageGroup, rewardsEarned, choreName, choreIsComplete)
+    private int _screenTime;//parent enter screen time
+    private int _moneyEarned;//parent enter money amount for each chore.
+    public Teen(string ageGroup, string choreName, bool choreIsComplete) : base(ageGroup, choreName, choreIsComplete)
     {
         _ageGroup = ageGroup;
     }
-    public Teen() :base("Teen", "", "", false)
+    public Teen() :base("Teen", "", false)
+    {
+        
+    }
+    public int GetTime()
+    {
+        return _screenTime;
+    }
+
+    public int GetMoney()
+    {
+        return _moneyEarned;
+    }
+    public void AddScreenTime(int time)
+    {
+        _screenTime += time;
+    }
+    public void AddMoneyEarned(int money)
+    {
+        _moneyEarned += money;
+    }
+    public override void RewardsEarned()//implement method for reward.
     {
         
     }
@@ -27,10 +48,10 @@ public class Teen : Chores
     }
     public override string SaveChore()
     {
-        return ($"{_ageGroup}; {GetName()}; {GetChoreName()}; {GetRewards()}; {GetChoreIsComplete()}");
+        return ($"{_ageGroup};[ {GetChoreIsComplete()} ] {GetChoreName()};");
     }
-    public override void DisplayProgress(List<Chores> choress)
+    public override void DisplayProgress(List<Chores> chores)
     {
-        Console.WriteLine($"{_ageGroup}; {GetName()}; {GetChoreName()}; {GetRewards()}; {GetChoreIsComplete()}");
+        Console.WriteLine($"{_ageGroup};[ {GetChoreIsComplete()} ];");
     }
 }

@@ -4,15 +4,37 @@ using System.Runtime.CompilerServices;
 public class LittleKid : Chores
 {
     private string _ageGroup = "Big Kid";
-    private List<string> _treats;//random gen for treats
-    private List<int> _screenTime;//random gen for screen time
-    public LittleKid(string ageGroup, string rewardsEarned, string choreName, bool choreIsComplete) : base(ageGroup, rewardsEarned, choreName, choreIsComplete)
+    private int _screenTime;//parent enter screen time
+    public LittleKid(string ageGroup, string choreName, bool choreIsComplete) : base(ageGroup, choreName, choreIsComplete)
     {
         _ageGroup = ageGroup;
     }
-    public LittleKid() :base("Little Kid", "", "", false)
+    public LittleKid() :base("Little Kid", "", false)
     {
         
+    }
+     public int GetTime()
+    {
+        return _screenTime;
+    }
+    public void AddScreenTime(int time)
+    {
+        _screenTime += time;
+    }
+   public List<string> _treats = new List<string>
+    {
+        "Candy",
+        "Ice Cream",
+        "Cookie",
+        "Snack Choice",
+        "Kids Choice"
+    };
+    public override void RewardsEarned()//implement method for reward.
+    {
+        Random randomGenerator = new Random();
+        int index = randomGenerator.Next(1,_treats.Count());
+        Console.WriteLine($"\n*** You have {_treats[index]} points! ***\n");
+
     }
     public override void ParentChoreList(int i)
     {
@@ -27,10 +49,10 @@ public class LittleKid : Chores
     }
     public override string SaveChore()
     {
-        return ($"{_ageGroup};[ {GetChoreIsComplete()} ] {GetChoreName()}; {GetRewards()}; ");
+        return ($"{_ageGroup};[ {GetChoreIsComplete()} ] {GetChoreName()};");
     }
     public override void DisplayProgress(List<Chores> chores)
     {
-        Console.WriteLine($"{_ageGroup};[ {GetChoreIsComplete()} ]; {GetRewards()};");
+        Console.WriteLine($"{_ageGroup};[ {GetChoreIsComplete()} ];");
     }
 }
