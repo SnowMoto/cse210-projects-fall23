@@ -173,55 +173,55 @@ public class ProgressManagement
             {
                 if (chore.GetChoreIsComplete() == false)
                 {
-                    outputFile.WriteLine($"[ ] {chore.GetName()} ({chore.GetChoreName()})");
+                    outputFile.WriteLine($"[ ] {chore.GetName()} - {chore.GetChoreName()} - {_earned} ");
                 }
                 else if (chore.GetChoreIsComplete() == true)
                 {
-                    outputFile.WriteLine($"[X] {chore.GetName()} ({chore.GetChoreName()})");
+                    outputFile.WriteLine($"[X] {chore.GetName()} - {chore.GetChoreName()} - {_earned}");
                 }
             }
             foreach (ChoreIdeas assign in _assign)
             {
                 if (assign.GetChoreIsDone() == false)
                 {
-                    outputFile.WriteLine($"[ ] {assign._toddlerChores}");
+                    outputFile.WriteLine($"[ ] {assign._toddlerChores} - {_earned}");
                 }
                 else if (assign.GetChoreIsDone() == true)
                 {
-                    outputFile.WriteLine($"[X] {assign._toddlerChores}");
+                    outputFile.WriteLine($"[X] {assign._toddlerChores} - {_earned}");
                 }
             }
             foreach (ChoreIdeas assign in _assign)
             {
                 if (assign.GetChoreIsDone() == false)
                 {
-                    outputFile.WriteLine($"[ ] {assign._lilKidChores}");
+                    outputFile.WriteLine($"[ ] {assign._lilKidChores} - {_earned}");
                 }
                 else if (assign.GetChoreIsDone() == true)
                 {
-                    outputFile.WriteLine($"[X] {assign._lilKidChores}");
+                    outputFile.WriteLine($"[X] {assign._lilKidChores} - {_earned}");
                 }
             }
             foreach (ChoreIdeas assign in _assign)
             {
                 if (assign.GetChoreIsDone() == false)
                 {
-                    outputFile.WriteLine($"[ ] {assign._bigKidChores}");
+                    outputFile.WriteLine($"[ ] {assign._bigKidChores} - {_earned}");
                 }
                 else if (assign.GetChoreIsDone() == true)
                 {
-                    outputFile.WriteLine($"[X] {assign._bigKidChores}");
+                    outputFile.WriteLine($"[X] {assign._bigKidChores} - {_earned}");
                 }
             }
             foreach (ChoreIdeas assign in _assign)
             {
                 if (assign.GetChoreIsDone() == false)
                 {
-                    outputFile.WriteLine($"[ ] {assign._teenChores}");
+                    outputFile.WriteLine($"[ ] {assign._teenChores} - {_earned}");
                 }
                 else if (assign.GetChoreIsDone() == true)
                 {
-                    outputFile.WriteLine($"[X] {assign._teenChores}");
+                    outputFile.WriteLine($"[X] {assign._teenChores} - {_earned}");
                 }
             }
         }
