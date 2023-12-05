@@ -9,7 +9,7 @@ class Program
         int menu = 0;
         Record goals = new Record();
 
-        while ( menu != 5)
+        while ( menu != 8)
         {
             Console.WriteLine("Welcome to the Eternal Quest");
             Console.WriteLine();
