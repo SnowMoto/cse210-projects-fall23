@@ -1,5 +1,9 @@
-[X] Toddler - Pick up toys - System.Collections.Generic.List`1[Rewards]
-[ ] Toddler - Put books on shelf - System.Collections.Generic.List`1[Rewards] 
-[ ] Toddler - Put dirty clothes in the basket - System.Collections.Generic.List`1[Rewards] 
-[ ] Toddler - Help set the table - System.Collections.Generic.List`1[Rewards] 
-[ ] Toddler - Help sweep with a little broom brush - System.Collections.Generic.List`1[Rewards] 
+1. [X] Teen - Help prepare dinner
+2. [X] Teen - Help clean up dinner
+3. [ ] Teen - Take trash to the curb 
+4. [X] Teen - Help little kids with laundry 
+5. [ ] Teen - Vacuum 
+6. [X] Teen - Help with grocery Shopping
+7. [ ] Teen - Clean windows 
+Reward for all Chores Complete: party
+Bonus if Good Habits Complete: stay up late
