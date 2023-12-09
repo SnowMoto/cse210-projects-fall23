@@ -75,6 +75,7 @@ public class ChoreIdeas
             }
         }
     }
+
     //Display format of the lists.
     public void AssignedLilKid(int i)
     {
